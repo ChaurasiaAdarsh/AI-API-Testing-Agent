@@ -1,0 +1,103 @@
+# ============================================================
+# Root .gitignore - AI API Testing & Contract Intelligence Agent
+# ============================================================
+
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.local
+
+# --- Local Tooling & Binaries ---
+tools/
+apache-maven-*/
+
+# --- Java / Maven ---
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/MavenWrapperDownloader.java
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# --- Frontend & Node.js ---
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnpm-store/
+
+# --- Logs & Debugging ---
+*.log
+logs/
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- IDEs & Editors ---
+.idea/
+*.iml
+*.iws
+*.ipr
+.eclipse/
+.project
+.classpath
+.settings/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+
+# --- Operating System Files ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# --- Docker & Containers ---
+.docker/
+
+# --- Test Reports & Coverage (preserve source HTML like frontend/index.html) ---
+**/surefire-reports/
+**/failsafe-reports/
+coverage/
+.nyc_output/
+target/site/
+
+# --- Temporary & Backup Files ---
+*.tmp
+*.bak
