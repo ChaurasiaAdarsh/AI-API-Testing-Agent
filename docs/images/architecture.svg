@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+    <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f6feb" />
+      <stop offset="100%" stop-color="#388bfd" />
+    </linearGradient>
+    <linearGradient id="ai" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8957e5" />
+      <stop offset="100%" stop-color="#bc8cff" />
+    </linearGradient>
+    <linearGradient id="success" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#238636" />
+      <stop offset="100%" stop-color="#2ea043" />
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00a8cc" />
+      <stop offset="100%" stop-color="#00d4ff" />
+    </linearGradient>
+    <linearGradient id="warn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d29922" />
+      <stop offset="100%" stop-color="#e3b341" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#58a6ff" />
+    </marker>
+    <marker id="arrow-ai" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#bc8cff" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2ea043" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="640" rx="16" fill="url(#bg)" stroke="#30363d" stroke-width="2" />
+
+  <!-- Title Badge -->
+  <g transform="translate(40, 30)">
+    <rect width="920" height="60" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
+    <circle cx="35" cy="30" r="14" fill="url(#cyan)" />
+    <text x="35" y="35" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="900" fill="#0d1117" text-anchor="middle">AI</text>
+    <text x="65" y="27" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#f0f6fc">AI API Testing &amp; Contract Intelligence Agent</text>
+    <text x="65" y="47" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b949e">End-to-End Autonomous API Contract Testing &amp; Diagnostic Pipeline</text>
+  </g>
+
+  <!-- Layer 1: Client / UI -->
+  <g transform="translate(60, 120)" filter="url(#shadow)">
+    <rect width="880" height="70" rx="10" fill="#161b22" stroke="#388bfd" stroke-width="1.5" />
+    <rect x="15" y="15" width="40" height="40" rx="8" fill="url(#primary)" />
+    <text x="35" y="40" font-family="monospace" font-size="20" fill="#ffffff" text-anchor="middle">&#9881;</text>
+    <text x="70" y="35" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f0f6fc">Developer Dashboard &amp; UI (React 18 + Vite + JavaScript)</text>
+    <text x="70" y="53" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b949e">OpenAPI Upload &#8226; Live Scenario Triggering &#8226; Execution Metrics &#8226; AI Diagnostics Panel</text>
+  </g>
+
+  <!-- Flow Line 1 -->
+  <path d="M 500 190 L 500 225" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Layer 2: Core Platform Engine -->
+  <g transform="translate(60, 230)" filter="url(#shadow)">
+    <rect width="880" height="260" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
+    <text x="25" y="30" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#58a6ff">BACKEND ARCHITECTURE (Spring Boot 3.3.4 + Java 21)</text>
+
+    <!-- Component 1: Parser -->
+    <g transform="translate(25, 50)">
+      <rect width="255" height="180" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1.5" />
+      <rect x="15" y="15" width="225" height="30" rx="6" fill="#30363d" />
+      <text x="127" y="35" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#58a6ff" text-anchor="middle">OpenAPI 3.x Parser</text>
+      <text x="20" y="70" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Swagger Parser v3</text>
+      <text x="20" y="92" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Token Normalization</text>
+      <text x="20" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; ApiContractDto Model</text>
+      <text x="20" y="136" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Schema Extraction</text>
+      <rect x="20" y="148" width="215" height="20" rx="4" fill="#161b22" />
+      <text x="127" y="162" font-family="monospace" font-size="10" fill="#8b949e" text-anchor="middle">OpenApiParserService</text>
+    </g>
+
+    <!-- Component 2: AI Engine -->
+    <g transform="translate(310, 50)">
+      <rect width="260" height="180" rx="8" fill="#21262d" stroke="#bc8cff" stroke-width="1.5" />
+      <rect x="15" y="15" width="230" height="30" rx="6" fill="url(#ai)" />
+      <text x="130" y="35" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">&#10022; GenAI Synthesis Engine</text>
+      <text x="20" y="70" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Spring AI ChatClient</text>
+      <text x="20" y="92" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Ollama (llama3.2 / cloud)</text>
+      <text x="20" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Positive, Negative, Boundary</text>
+      <text x="20" y="136" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Strict JSON Output</text>
+      <rect x="20" y="148" width="220" height="20" rx="4" fill="#161b22" />
+      <text x="130" y="162" font-family="monospace" font-size="10" fill="#bc8cff" text-anchor="middle">OllamaAiEngine</text>
+    </g>
+
+    <!-- Component 3: Execution & Validator -->
+    <g transform="translate(600, 50)">
+      <rect width="255" height="180" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1.5" />
+      <rect x="15" y="15" width="225" height="30" rx="6" fill="url(#success)" />
+      <text x="127" y="35" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Validator &amp; Runner</text>
+      <text x="20" y="70" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Concurrent Async HTTP</text>
+      <text x="20" y="92" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; SSRF Protection Shield</text>
+      <text x="20" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Deterministic Schema Check</text>
+      <text x="20" y="136" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#f0f6fc">&#10003; Status Code Assertion</text>
+      <rect x="20" y="148" width="215" height="20" rx="4" fill="#161b22" />
+      <text x="127" y="162" font-family="monospace" font-size="10" fill="#2ea043" text-anchor="middle">ContractValidator</text>
+    </g>
+  </g>
+
+  <!-- Connectors between Backend components -->
+  <path d="M 340 370 L 370 370" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 630 370 L 660 370" stroke="#bc8cff" stroke-width="2" marker-end="url(#arrow-ai)" />
+
+  <!-- Flow Line 2 -->
+  <path d="M 500 490 L 500 525" stroke="#2ea043" stroke-width="2" marker-end="url(#arrow-green)" />
+
+  <!-- Layer 3: Persistence & Target API -->
+  <g transform="translate(60, 530)" filter="url(#shadow)">
+    <rect width="425" height="75" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
+    <text x="20" y="32" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#f0f6fc">&#128452; Persistence Layer (PostgreSQL / H2)</text>
+    <text x="20" y="52" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#8b949e">Projects &#8226; OpenAPI Specs &#8226; Test Scenarios &#8226; Execution History &#8226; Violations</text>
+  </g>
+
+  <g transform="translate(515, 530)" filter="url(#shadow)">
+    <rect width="425" height="75" rx="8" fill="#161b22" stroke="#d29922" stroke-width="1.5" />
+    <text x="20" y="32" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#e3b341">&#127760; Target API Under Test (Live Endpoints)</text>
+    <text x="20" y="52" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="#8b949e">Built-in Demo Service (/demo/users) or Custom Microservices</text>
+  </g>
+</svg>
