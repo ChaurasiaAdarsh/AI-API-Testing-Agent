@@ -8,7 +8,7 @@ export default function NewProject() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [form, setForm] = useState({ name: '', description: '', targetBaseUrl: 'http://localhost:8080' });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState({});
 
   const mutation = useMutation({
     mutationFn: projectsApi.create,
@@ -19,7 +19,7 @@ export default function NewProject() {
   });
 
   const validate = () => {
-    const errs: Record<string, string> = {};
+    const errs = {};
     if (!form.name.trim()) errs.name = 'Project name is required';
     if (!form.targetBaseUrl.trim()) errs.targetBaseUrl = 'Target base URL is required';
     else if (!/^https?:\/\/.+/.test(form.targetBaseUrl))
@@ -28,7 +28,7 @@ export default function NewProject() {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) mutation.mutate(form);
   };
@@ -83,7 +83,7 @@ export default function NewProject() {
 
           {mutation.isError && (
             <div className="error-msg" style={{ marginBottom: 16 }}>
-              {(mutation.error as Error).message}
+              {mutation.error?.message || 'Failed to create project'}
             </div>
           )}
 

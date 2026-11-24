@@ -13,10 +13,9 @@ import {
   ChevronDown,
   ChevronRight,
 } from 'lucide-react';
-import { TestExecution } from '../types';
 import { format } from 'date-fns';
 
-function ExecutionRow({ exec }: { exec: TestExecution }) {
+function ExecutionRow({ exec }) {
   const [expanded, setExpanded] = useState(false);
   const isPassed = exec.status === 'PASSED';
 
@@ -118,7 +117,7 @@ function ExecutionRow({ exec }: { exec: TestExecution }) {
 }
 
 export default function TestRunDetail() {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const runId = Number(id);
   const [activeTab, setActiveTab] = useState('summary');
 
@@ -323,13 +322,13 @@ export default function TestRunDetail() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                     <MethodBadge method={exec.method} />
                     <span style={{ fontFamily: 'monospace', fontWeight: 600 }}>{exec.endpoint}</span>
-                    <span className={`severity-${exec.failureAnalysis!.severity.toLowerCase()}`}>
-                      [{exec.failureAnalysis!.severity}]
+                    <span className={`severity-${exec.failureAnalysis.severity.toLowerCase()}`}>
+                      [{exec.failureAnalysis.severity}]
                     </span>
                   </div>
-                  <div style={{ fontSize: 13, marginBottom: 6 }}>{exec.failureAnalysis!.summary}</div>
+                  <div style={{ fontSize: 13, marginBottom: 6 }}>{exec.failureAnalysis.summary}</div>
                   <div style={{ fontSize: 12, color: 'var(--accent-cyan)' }}>
-                    Action: {exec.failureAnalysis!.recommendation}
+                    Action: {exec.failureAnalysis.recommendation}
                   </div>
                 </div>
               ))}

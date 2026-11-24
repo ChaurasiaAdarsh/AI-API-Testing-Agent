@@ -16,19 +16,18 @@ import {
   ChevronRight,
   AlertCircle,
 } from 'lucide-react';
-import { TestCase } from '../types';
 import { format } from 'date-fns';
 
 export default function ProjectDetail() {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const projectId = Number(id);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const [activeTab, setActiveTab] = useState('overview');
   const [specContent, setSpecContent] = useState('');
-  const [specFormat, setSpecFormat] = useState<'YAML' | 'JSON'>('YAML');
-  const [currentRunId, setCurrentRunId] = useState<number | null>(null);
+  const [specFormat, setSpecFormat] = useState('YAML');
+  const [currentRunId, setCurrentRunId] = useState(null);
   const [maxTests, setMaxTests] = useState(8);
 
   const { data: project, isLoading: projectLoading } = useQuery({
@@ -46,7 +45,7 @@ export default function ProjectDetail() {
 
   const { data: currentRun } = useQuery({
     queryKey: ['testRun', currentRunId],
-    queryFn: () => testRunsApi.getById(currentRunId!),
+    queryFn: () => testRunsApi.getById(currentRunId),
     enabled: !!currentRunId,
     refetchInterval: (query) => {
       const s = query.state.data?.status;
@@ -56,7 +55,7 @@ export default function ProjectDetail() {
 
   const { data: testCases = [] } = useQuery({
     queryKey: ['testCases', currentRunId],
-    queryFn: () => testRunsApi.getTestCases(currentRunId!),
+    queryFn: () => testRunsApi.getTestCases(currentRunId),
     enabled:
       !!currentRunId &&
       (currentRun?.status === 'READY' ||
@@ -82,18 +81,18 @@ export default function ProjectDetail() {
   });
 
   const executeMutation = useMutation({
-    mutationFn: () => testRunsApi.execute(currentRunId!),
+    mutationFn: () => testRunsApi.execute(currentRunId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['testRun', currentRunId] });
     },
   });
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
+  const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
     if (!file) return;
     setSpecFormat(file.name.endsWith('.json') ? 'JSON' : 'YAML');
     const reader = new FileReader();
-    reader.onload = (e) => setSpecContent(e.target?.result as string);
+    reader.onload = (e) => setSpecContent(e.target?.result);
     reader.readAsText(file);
   }, []);
 
@@ -217,7 +216,7 @@ export default function ProjectDetail() {
             </div>
             <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 2 }}>
               {currentRun?.status === 'GENERATING_TESTS'
-                ? `Analyzing OpenAPI contract schemas and constraints to produce positive, negative & boundary test cases.`
+                ? 'Analyzing OpenAPI contract schemas and constraints to produce positive, negative & boundary test cases.'
                 : 'Running HTTP requests and validating response status, schemas & headers.'}
             </div>
           </div>
@@ -380,7 +379,7 @@ export default function ProjectDetail() {
             <div className="form-group">
               <label className="label">Format</label>
               <div style={{ display: 'flex', gap: 8 }}>
-                {(['YAML', 'JSON'] as const).map((fmt) => (
+                {['YAML', 'JSON'].map((fmt) => (
                   <button
                     key={fmt}
                     className={`btn ${specFormat === fmt ? 'btn-primary' : 'btn-secondary'} btn-sm`}
@@ -429,7 +428,7 @@ export default function ProjectDetail() {
             )}
             {uploadMutation.isError && (
               <div className="error-msg" style={{ marginBottom: 12 }}>
-                {(uploadMutation.error as Error).message}
+                {uploadMutation.error?.message || 'Upload failed'}
               </div>
             )}
 
@@ -490,7 +489,7 @@ export default function ProjectDetail() {
                     </tr>
                   </thead>
                   <tbody>
-                    {testCases.map((tc: TestCase) => (
+                    {testCases.map((tc) => (
                       <tr key={tc.id}>
                         <td style={{ fontWeight: 600, fontSize: 13 }}>{tc.name}</td>
                         <td><MethodBadge method={tc.method} /></td>

@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, FolderOpen, Zap } from 'lucide-react';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }) {
   const { pathname } = useLocation();
 
   return (

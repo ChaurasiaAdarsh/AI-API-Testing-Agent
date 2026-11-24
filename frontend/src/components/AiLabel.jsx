@@ -1,4 +1,4 @@
-export function AiLabel({ text = 'AI Analysis' }: { text?: string }) {
+export function AiLabel({ text = 'AI Analysis' }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, color: 'var(--ai-purple-light)', textTransform: 'uppercase' }}>
       ✦ {text}

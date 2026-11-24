@@ -1,22 +1,21 @@
 import apiClient from './client';
-import { TestRun, TestCase, TestExecution, TestRunSummary } from '../types';
 
 export const testRunsApi = {
-  getById: (id: number): Promise<TestRun> =>
+  getById: (id) =>
     apiClient.get(`/test-runs/${id}`).then(r => r.data),
 
-  execute: (id: number): Promise<TestRun> =>
+  execute: (id) =>
     apiClient.post(`/test-runs/${id}/execute`).then(r => r.data),
 
-  getTestCases: (id: number): Promise<TestCase[]> =>
+  getTestCases: (id) =>
     apiClient.get(`/test-runs/${id}/test-cases`).then(r => r.data),
 
-  getResults: (id: number): Promise<TestExecution[]> =>
+  getResults: (id) =>
     apiClient.get(`/test-runs/${id}/results`).then(r => r.data),
 
-  getViolations: (id: number): Promise<TestExecution[]> =>
+  getViolations: (id) =>
     apiClient.get(`/test-runs/${id}/violations`).then(r => r.data),
 
-  getSummary: (id: number): Promise<TestRunSummary> =>
+  getSummary: (id) =>
     apiClient.get(`/test-runs/${id}/summary`).then(r => r.data),
 };

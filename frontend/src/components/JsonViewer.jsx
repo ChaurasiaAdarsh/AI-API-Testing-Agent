@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function formatJson(raw: string | null | undefined): string {
+function formatJson(raw) {
   if (!raw) return '';
   try { return JSON.stringify(JSON.parse(raw), null, 2); }
   catch { return raw; }
@@ -11,11 +11,6 @@ export function JsonViewer({
   label,
   defaultCollapsed = false,
   maxHeight = 300
-}: {
-  data?: string | null;
-  label?: string;
-  defaultCollapsed?: boolean;
-  maxHeight?: number;
 }) {
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
   if (!data) return <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>none</span>;
@@ -26,6 +21,7 @@ export function JsonViewer({
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
           <span className="label" style={{ marginBottom: 0 }}>{label}</span>
           <button
+            type="button"
             className="btn btn-sm btn-secondary"
             onClick={() => setCollapsed(!collapsed)}
           >
