@@ -277,3 +277,8 @@ npm run build
 | `APP_TESTING_ALLOWED_HOSTS` | ` ` | Comma-separated allowed hostnames |
 | `APP_DEMO_DEFECTS_ENABLED` | `true` | Enables intentional defects in demo API |
 | `CORS_ALLOWED_ORIGINS` | `http://localhost:5173,http://localhost:3000` | Allowed CORS origins |
+
+
+## License
+
+This repository is distributed under the [MIT License](LICENSE).
